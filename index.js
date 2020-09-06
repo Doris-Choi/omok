@@ -34,6 +34,8 @@ const renderScoreBoard = () => {
   const totalGame = document.createElement('h2');
   totalGame.innerText = `전체 게임 수: ${players[1].score + players[2].score}`;
   frag.appendChild(totalGame);
+  const playerWrap = document.createElement('div');
+  playerWrap.classList.add('player-wrapper');
   for (let i = 0; i < 2; i++) {
     const box = document.createElement('div');
     box.classList.add('player-box');
@@ -47,8 +49,9 @@ const renderScoreBoard = () => {
     playerName.appendChild(stone);
     box.appendChild(playerName);
     box.appendChild(score);
-    frag.appendChild(box);
+    playerWrap.appendChild(box);
   }
+  frag.appendChild(playerWrap);
   scoreBoard.appendChild(frag);
 };
 // 바둑판 그리기

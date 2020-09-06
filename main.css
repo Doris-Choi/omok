@@ -1,8 +1,112 @@
 * {
   box-sizing: border-box;
 }
-h1 {
+.landing {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.landing h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
   text-align: center;
+}
+.landing p {
+  margin: 0.6rem 0 1.5rem;
+  color: #aaa;
+  font-size: 0.75rem;
+}
+.landing .players {
+  width: 100%;
+}
+.landing label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+#player1,
+#player2 {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 2px 5px;
+  line-height: 1.5;
+}
+#player1::placeholder,
+#player2::placeholder {
+  color: #aaa;
+}
+.landing button {
+  width: 100%;
+  line-height: 2;
+}
+#game {
+  display: none;
+}
+#game h1 {
+  margin: 20px 0;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+.scoreboard {
+  width: 250px;
+  margin: 0 auto;
+}
+.scoreboard h2 {
+  width: 100%;
+  margin: 10px auto;
+  font-size: 1.25rem;
+  text-align: center;
+}
+.scoreboard .player-wrapper {
+  display: flex;
+  border: 0.5px solid #ccc;
+}
+.scoreboard .player-box {
+  flex: 1;
+  border: 0.5px solid #ccc;
+}
+.scoreboard .player-box h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  font-weight: 700;
+}
+.scoreboard .player-box h3 .black,
+.scoreboard .player-box h3 .white {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  border-radius: 50%;
+}
+.scoreboard .player-box h3 .black {
+  background: #000;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9),
+    inset -10px -10px 5px rgba(0, 0, 0, 0.9),
+    inset 4px 4px 10px rgba(0, 0, 0, 0.9), inset 2px 14px 8px rgb(255, 255, 255);
+}
+.scoreboard .player-box h3 .white {
+  background: #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9),
+    inset -1px -2px 3px rgba(0, 0, 0, 0.3),
+    inset -6px -9px 5px rgba(0, 0, 0, 0.15);
+}
+.scoreboard .player-box .score {
+  height: 54px;
+  padding: 5px 0;
+  font-size: 3.5rem;
+  text-align: center;
+}
+#game button {
+  display: block;
+  width: 250px;
+  height: 30px;
+  margin: 15px auto;
+}
+button {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 #board {
   width: 600px;
@@ -13,11 +117,12 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  box-shadow: 5px 5px 4px rgb(156, 129, 94), -1px -1px 4px rgb(156, 129, 94);
 }
-.row {
+#board .row {
   display: flex;
 }
-.cell {
+#board .cell {
   width: 24px;
   height: 19px;
   margin: 6px;
@@ -25,24 +130,24 @@ h1 {
   cursor: pointer;
   text-indent: -9999px;
 }
-.cell:hover {
+#board .cell:hover {
   background: rgba(0, 0, 0, 0.2);
 }
-.white,
-.black {
+#board .white,
+#board .black {
   width: 36.6px;
   height: 29px;
   margin: 1px;
   padding: 0;
   border-radius: 50%;
 }
-.cell.black {
+#board .cell.black {
   background: #000;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9),
     inset -13px -13px 7px rgba(0, 0, 0, 0.9),
     inset 4px 4px 10px rgba(0, 0, 0, 0.9), inset 2px 14px 8px rgb(255, 255, 255);
 }
-.cell.white {
+#board .cell.white {
   background: #fff;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9),
     inset -1px -2px 3px rgba(0, 0, 0, 0.3),
